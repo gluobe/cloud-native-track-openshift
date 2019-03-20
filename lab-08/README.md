@@ -231,7 +231,8 @@ NAME              TYPE      FROM          STATUS     STARTED          DURATION
 scm-web-hooks-1   Source    Git@9008f89   Complete   14 minutes ago   27s
 scm-web-hooks-2   Source    Git@6e78366   Complete   2 minutes ago    15s
 ```
-``
+
+```
 oc logs build/scm-web-hooks-2 -f
 
 Cloning "https://github.com/trescst/bluegreen.git" ...
