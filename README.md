@@ -1,4 +1,4 @@
-# Container Native Track - OpenShift Workshop
+# Cloud Native Track - OpenShift Workshop
 
 In this hands-on workshop you will learn the basics of OpenShift.
 
