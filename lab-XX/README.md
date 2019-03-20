@@ -69,3 +69,19 @@ In order to get access as an admin to our webconsole we need to add the followin
 ```
 minishift addon apply admin-user
 ```
+
+## Task 2: Stop minishift
+
+To stop minishift run:
+
+```
+minishift stop
+```
+
+## Task 3: Delete minishift
+
+To delete minishift run:
+
+```
+minishift delete
+```
