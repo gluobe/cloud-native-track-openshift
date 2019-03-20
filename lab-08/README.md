@@ -253,5 +253,5 @@ Pushed 6/6 layers, 100% complete
 Push successful
 ```
 
-*Don't delete your deployment or project at this stage, we are going to re-use 
-this in the next lab.*
+> NOTE: Don't delete your deployment or project at this stage, we are going to 
+> re-use this deployment in the next lab.*
