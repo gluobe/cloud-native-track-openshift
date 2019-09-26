@@ -12,6 +12,8 @@ deployment.
 ```
 oc get dc
 
+---
+
 NAME            REVISION   DESIRED   CURRENT   TRIGGERED BY
 scm-web-hooks   2          1         1         config,image(scm-web-hooks:latest)
 ```
@@ -32,6 +34,8 @@ section of the output.
 
 ```
 oc get route
+
+---
 
 NAME            HOST/PORT                                                     PATH      SERVICES        PORT       TERMINATION   WILDCARD
 scm-web-hooks   scm-web-hooks-lab-08-user13.apps.openshift-workshop.gluo.io             scm-web-hooks   8080-tcp                 None

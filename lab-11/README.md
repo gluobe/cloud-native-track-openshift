@@ -27,6 +27,8 @@ a way that they will get grouped on one compute node.
 ```
 oc new-app --image-stream=php --code=https://github.com/RedHatWorkshops/bluegreen.git --name=labeling
 
+---
+
 --> Found image 4757d9f (13 days old) in image stream "openshift/php" under tag "7.1" for "php"
 
     Apache 2.4 with PHP 7.1
@@ -65,6 +67,8 @@ The second way is to use the command line:
 ```
 oc scale dc/labeling --replicas=3
 
+---
+
 deploymentconfig.apps.openshift.io/labeling scaled
 ```
 
@@ -94,6 +98,8 @@ Confirm that your replicas are running on different nodes.
 
 ```
 oc get pods -o wide
+
+---
 
 NAME               READY     STATUS      RESTARTS   AGE       IP             NODE                                        NOMINATED NODE
 labeling-1-6lxcr   1/1       Running     0          3m        10.128.8.81    compute2.openshift-workshop.gluo.internal   <none>
@@ -157,6 +163,8 @@ on the same node now.
 
 ```
 oc get pods -o wide
+
+---
 
 NAME               READY     STATUS      RESTARTS   AGE       IP            NODE
 labeling-1-build   0/1       Completed   0          17m       10.128.8.19   compute2.openshift-workshop.gluo.internal

@@ -33,6 +33,8 @@ https://github.com/RedHatWorkshops/bluegreen.
 ```
 oc new-app --image-stream=php --code=https://github.com/<GITHUB_USERNAME>/bluegreen.git --name=scm-web-hooks
 
+---
+
 --> Found image 4757d9f (13 days old) in image stream "openshift/php" under tag "7.1" for "php"
 
     Apache 2.4 with PHP 7.1
@@ -68,6 +70,8 @@ Check out the build configuration.
 ```
 oc get bc
 
+---
+
 NAME            TYPE      FROM      LATEST
 scm-web-hooks   Source    Git       1
 ```
@@ -76,6 +80,8 @@ Check out the deployment configuration.
 
 ```
 oc get dc
+
+---
 
 NAME            REVISION   DESIRED   CURRENT   TRIGGERED BY
 scm-web-hooks   1          1         1         config,image(scm-web-hooks:latest)
@@ -86,6 +92,8 @@ Show the created service.
 ```
 oc get service
 
+---
+
 NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
 scm-web-hooks   ClusterIP   172.30.118.0   <none>        8080/TCP,8443/TCP   42s
 ```
@@ -95,6 +103,8 @@ Show the replication controller.
 ```
 oc get rc
 
+---
+
 NAME              DESIRED   CURRENT   READY     AGE
 scm-web-hooks-1   1         1         1         29s
 ```
@@ -103,6 +113,8 @@ Show the route you have created.
 
 ```
 oc get route
+
+---
 
 No resources found.
 ```
@@ -137,6 +149,8 @@ Now we are going to create a route for the application:
 ```
 oc get service
 
+---
+
 NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
 scm-web-hooks   ClusterIP   172.30.118.0   <none>        8080/TCP,8443/TCP   2m
 ```
@@ -146,6 +160,8 @@ Create the actual route:
 ```
 oc expose service scm-web-hooks
 
+---
+
 route.route.openshift.io/scm-web-hooks exposed
 ```
 
@@ -154,11 +170,13 @@ Now test the application:
 ```
 oc get route
 
+---
+
 NAME            HOST/PORT                                                     PATH      SERVICES        PORT       TERMINATION   WILDCARD
 scm-web-hooks   scm-web-hooks-lab-08-<USERNAME>.apps.openshift-workshop.gluo.io             scm-web-hooks   8080-tcp                 None
 ```
 
-Past the `HOST/PORT` section in your browser. This will get you to your 
+Paste the `HOST/PORT` section in your browser. This will get you to your 
 deployment: http://scm-web-hooks-lab-08-<USERNAME>.apps.openshift-workshop.gluo.io
 
 ## Task 4: Configure the github webhook
@@ -226,6 +244,8 @@ following commands:
 
 ```
 oc get builds
+
+---
 
 NAME              TYPE      FROM          STATUS     STARTED          DURATION
 scm-web-hooks-1   Source    Git@9008f89   Complete   14 minutes ago   27s

@@ -24,6 +24,8 @@ List existing image builder or image streams.
 ```
 oc new-app -S --image-stream=php
 
+---
+
 Image streams (oc new-app --image-stream=<image-stream> [--code=<source>])
 -----
 php
@@ -47,6 +49,8 @@ Now monitor the build.
 
 ```
 oc get builds
+
+---
 
 NAME      TYPE      FROM          STATUS    STARTED          DURATION
 blue-1    Source    Git@9008f89   Running   20 seconds ago   
@@ -74,6 +78,8 @@ Check the application deployment status.
 ```
 oc get pods
 
+---
+
 NAME           READY     STATUS      RESTARTS   AGE
 blue-1-4pt7t   1/1       Running     0          30s
 blue-1-build   0/1       Completed   0          1m
@@ -86,6 +92,8 @@ This application displays a blue square. List the service.
 
 ```
 oc get service
+
+---
 
 NAME      CLUSTER-IP      EXTERNAL-IP   PORT(S)             AGE
 blue      172.30.52.106   <none>        8080/TCP,8443/TCP   3m
@@ -102,6 +110,8 @@ browser.
 
 ```
 oc get route
+
+---
 
 NAME         HOST/PORT                                                  PATH      SERVICES   PORT       TERMINATION   WILDCARD
 blue-route   blue-route-lab-06-<USERNAME.apps.openshift-workshop.gluo.io          blue       8080-tcp                 None

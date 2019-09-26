@@ -97,6 +97,8 @@ Now run the routes command to get your route.
 ```
 oc get route
 
+---
+
 NAME        HOST/PORT                                                          PATH      SERVICES    PORT       TERMINATION   WILDCARD
 pricelist   http://pricelist-lab-04-<USERNAME>.apps.openshift-workshop.gluo.io           pricelist   8080-tcp                 None
 ```

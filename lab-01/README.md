@@ -12,11 +12,26 @@ just copy/paste the commands below.
 export USERNAME=<REPLACE_WITH_YOUR_USERNAME>
 ```
 
+Make sure that you have exported your username correctly:
+
+```
+echo ${USERNAME}
+
+---
+
+user04
+```
+
+If your username is not echoed correctly, you probably made a mistake with the 
+previous `export` command, so try that command again.
+
 The command below creates a new project and is setting a description and display
 name for the project.
 
 ```
 oc new-project lab-01-${USERNAME} --description="lab-01 - ${USERNAME}" --display-name="lab-01 - ${USERNAME}"
+
+---
 
 Now using project "lab-01-user13" on server "https://openshift-workshop.gluo.io:8443".
 
@@ -62,6 +77,8 @@ command as shown below:
 ```
 oc new-app gluobe/welcome-php --name=welcome
 
+---
+
 --> Found Docker image 616b725 (2 years old) from Docker Hub for "gluobe/welcome-php"
 
     chx/welcome-php-1:b68a2d86
@@ -92,6 +109,8 @@ starts an application pod as shown below.
 ```
 oc get pods
 
+---
+
 NAME               READY     STATUS    RESTARTS   AGE
 welcome-1-deploy   1/1       Running   0          1m
 welcome-1-dkyyq    0/1       Pending   0          0s
@@ -103,6 +122,8 @@ the application pod will change for `Pending` to `Running` status.
 
 ```
 oc get pods
+
+---
 
 NAME              READY     STATUS    RESTARTS   AGE
 welcome-1-dkyyq   1/1       Running   0          56s
@@ -116,6 +137,8 @@ command to view the list of services in the project (you can also use
 
 ```
 oc get services
+
+---
 
 NAME      CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
 welcome   172.30.77.93   <none>        8080/TCP   2m
@@ -137,6 +160,8 @@ your setup an change it.
 ```
 oc expose service welcome --name=welcome
 
+---
+
 route.route.openshift.io/welcome exposed
 ```
 
@@ -144,6 +169,8 @@ With the `oc get routes` commad very that the route has been created:
 
 ```
 oc get routes
+
+---
 
 NAME      HOST/PORT                                               PATH      SERVICES   PORT       TERMINATION   WILDCARD
 welcome   welcome-lab-01-<USERNAME>.apps.openshift-workshop.gluo.io             welcome    8080-tcp                 None
@@ -164,6 +191,8 @@ your project.
 
 ```
 oc get all
+
+---
 
 NAME                  READY     STATUS    RESTARTS   AGE
 pod/welcome-1-8gwxj   1/1       Running   0          4m
@@ -205,6 +234,8 @@ You can run `oc get all` again to make sure the project is empty.
 ```
 oc get all
 
+---
+
 No resources found.
 ```
 
@@ -215,6 +246,8 @@ Delete the project with the following command.
 
 ```
 oc delete project lab-01-${USERNAME}
+
+---
 
 project.project.openshift.io "lab-01-user13" deleted
 ```

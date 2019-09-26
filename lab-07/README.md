@@ -27,6 +27,8 @@ List existing image builder or image streams.
 ```
 oc new-app -S --image-stream=php
 
+---
+
 Image streams (oc new-app --image-stream=<image-stream> [--code=<source>])
 -----
 php
@@ -44,6 +46,8 @@ code. (E.g. v1 branch and v2 branch)
 
 ```
 oc new-app --image-stream=php --code=https://github.com/RedHatWorkshops/bluegreen --env COLOR=blue --name=blue
+
+---
 
 --> Found image 4757d9f (13 days old) in image stream "openshift/php" under tag "7.1" for "php"
 
@@ -78,6 +82,8 @@ Now monitor the build.
 ```
 oc get builds
 
+---
+
 NAME      TYPE      FROM          STATUS    STARTED          DURATION
 blue-1    Source    Git@9008f89   Running   20 seconds ago   
 ```
@@ -103,6 +109,8 @@ Check the application deployment status.
 ```
 oc get pods
 
+---
+
 NAME           READY     STATUS      RESTARTS   AGE
 blue-1-4pt7t   1/1       Running     0          30s
 blue-1-build   0/1       Completed   0          1m
@@ -116,6 +124,8 @@ This application displays a blue square. List the service.
 ```
 oc get service
 
+---
+
 NAME      CLUSTER-IP      EXTERNAL-IP   PORT(S)             AGE
 blue      172.30.52.106   <none>        8080/TCP,8443/TCP   3m
 ```
@@ -125,6 +135,8 @@ Now we need to create a route for the service.
 ```
 oc expose service blue --name=bluegreen
 
+---
+
 route.route.openshift.io/bluegreen exposed
 ```
 
@@ -133,6 +145,8 @@ valueto into your browser.
 
 ```
 oc get route
+
+---
 
 NAME        HOST/PORT                                                 PATH      SERVICES   PORT       TERMINATION   WILDCARD
 bluegreen   bluegreen-lab-07-<USERNAME>.apps.openshift-workshop.gluo.io         blue       8080-tcp                 None
@@ -145,6 +159,8 @@ sure to name the application as `green` this time.
 
 ```
 oc new-app --image-stream=php --code=https://github.com/RedHatWorkshops/bluegreen --env COLOR=green --name=green
+
+---
 
 --> Found image 4757d9f (13 days old) in image stream "openshift/php" under tag "7.1" for "php"
 
@@ -179,6 +195,8 @@ services if you run:
 
 ```
 oc get service
+
+---
 
 NAME      CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
 blue      172.30.52.106    <none>        8080/TCP,8443/TCP   13m
@@ -241,6 +259,8 @@ Now we are going to test the application again.
 ```
 oc get route
 
+---
+
 NAME        HOST/PORT                                                 PATH      SERVICES   PORT       TERMINATION   WILDCARD
 bluegreen   bluegreen-lab-07-<USERNAME>.apps.openshift-workshop.gluo.io         green      8080-tcp                 None
 ```
@@ -300,6 +320,8 @@ command.
 
 ```
 oc delete project lab-07-${USERNAME}
+
+---
 
 project.project.openshift.io "lab-07-user13" deleted
 ```

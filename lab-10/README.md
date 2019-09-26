@@ -41,6 +41,8 @@ Verify that the configmap has been created succesfully:
 ```
 oc get configmap/config -o yaml
 
+---
+
 apiVersion: v1
 data:
   message: Hello World!
@@ -65,6 +67,8 @@ and apply them with the following commands.
 ```
 oc apply -f node-app-deployment.json
 
+---
+
 imagestream.image.openshift.io/node-app created
 deploymentconfig.apps.openshift.io/node-app created
 service/node-app created
@@ -73,6 +77,8 @@ route.route.openshift.io/node-app created
 
 ```
 oc apply -f node-app-build.json
+
+---
 
 buildconfig.build.openshift.io/node-app created
 ```
@@ -84,6 +90,8 @@ message.
 ```
 oc get route
 
+---
+
 NAME       HOST/PORT                                                PATH      SERVICES   PORT       TERMINATION   WILDCARD
 node-app   node-app-lab-10-<USERNAME>.apps.openshift-workshop.gluo.io         node-app   8080-tcp                 None
 ```
@@ -94,6 +102,8 @@ Open your browser and go to: http://node-app-lab-10-<USERNAME>.apps.openshift-wo
 
 ```
 oc edit configmap config
+
+...
 
 # Please edit the object below. Lines beginning with a '#' will be ignored,
 # and an empty file will abort the edit. If an error occurs while saving this file will be

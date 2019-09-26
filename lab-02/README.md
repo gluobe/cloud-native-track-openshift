@@ -46,6 +46,8 @@ command by supplying the git uri as the parameter.
 ```
 oc new-app https://github.com/gluobe/time --context-dir=rhel
 
+---
+
 --> Found Docker image 1d309a6 (6 weeks old) from registry.access.redhat.com for "registry.access.redhat.com/rhel7"
 
     * An image stream will be created as "rhel7:latest" that will track the source image
@@ -80,6 +82,8 @@ shown below.
 
 ```
 oc get bc time -o yaml
+
+---
 
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
@@ -143,6 +147,8 @@ Build starts in a minute or so. You can view the list of builds using
 ```
 oc get builds
 
+---
+
 NAME      TYPE      FROM          STATUS     STARTED          DURATION
 time-1    Docker    Git@1ec2d66   Complete   19 minutes ago   1m13s
 ```
@@ -155,6 +161,8 @@ internal docker registry.
 
 ```
 oc logs build/time-1
+
+---
 
 <output ommited>
 Successfully built 492e4a3bf772
@@ -179,6 +187,8 @@ following command. Note dc represents deploymentconfig.
 
 ```
 oc get dc -o yaml
+
+---
 
 apiVersion: v1
 items:
@@ -292,6 +302,8 @@ quickly and starts running in its own pod.
 ```
 oc get pods
 
+---
+
 NAME           READY     STATUS      RESTARTS   AGE
 time-1-build   0/1       Completed   0          2h
 time-1-rqa7c   1/1       Running     0          2h
@@ -305,6 +317,8 @@ check the service and add a route to expose that service.
 ```
 oc get services
 
+---
+
 NAME      CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
 time      172.30.xx.82   <none>        8080/TCP   2h
 ```
@@ -314,6 +328,8 @@ Here we expose the service as a route.
 ```
 oc expose service time
 
+---
+
 route.route.openshift.io/time exposed
 ```
 
@@ -321,6 +337,8 @@ And then we check the route exposed.
 
 ```
 oc get routes
+
+---
 
 NAME      HOST/PORT                                            PATH      SERVICES   PORT       TERMINATION   WILDCARD
 time      time-lab-02-<USERNAME>.apps.openshift-workshop.gluo.io             time       8080-tcp                 None
@@ -347,6 +365,8 @@ Delete the project with the following command.
 
 ```
 oc delete project lab-02-${USERNAME}
+
+---
 
 project.project.openshift.io "lab-02-user13" deleted
 ```
