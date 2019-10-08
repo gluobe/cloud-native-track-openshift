@@ -341,7 +341,7 @@ oc get routes
 ---
 
 NAME      HOST/PORT                                            PATH      SERVICES   PORT       TERMINATION   WILDCARD
-time      time-lab-02-<USERNAME>.apps.openshift-workshop.gluo.io             time       8080-tcp                 None
+time      time-lab-02-${USERNAME}.apps.openshift-workshop.gluo.io             time       8080-tcp                 None
 ```
 
 ## Task 6: Running the application
