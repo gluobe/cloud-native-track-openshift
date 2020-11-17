@@ -154,8 +154,7 @@ will allow you to expose your service to the world so that you can access it
 from the browser.
 
 *Note*: In this example, I am using a domain name of
-`apps.openshift-workshop.gluo.io`. *Ask the instructor for the domain name suffix* for
-your setup an change it.
+`apps.openshift-workshop.gluo.io`.
 
 ```
 oc expose service welcome --name=welcome
