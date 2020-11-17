@@ -9,16 +9,16 @@ Export the username environment variable. This to be sure that you are going to
 create the correct objects.
 
 ```
-export USERNAME=<username>
+export USER_NAME=<username>
 ```
 
 For this lab we are going to create fresh project. Use the following command.
 
 ```
-oc new-project lab-07-${USERNAME}
+oc new-project lab-07-${USER_NAME}
 ```
 
-Or, of course, create the `lab-07-${USERNAME}` project through the UI.
+Or, of course, create the `lab-07-${USER_NAME}` project through the UI.
 
 ## Task 2: Deploy the blue version
 
@@ -149,7 +149,7 @@ oc get route
 ---
 
 NAME        HOST/PORT                                                 PATH      SERVICES   PORT       TERMINATION   WILDCARD
-bluegreen   bluegreen-lab-07-<USERNAME>.apps.openshift-workshop.gluo.io         blue       8080-tcp                 None
+bluegreen   bluegreen-lab-07-<USER_NAME>.apps.openshift-workshop.gluo.io         blue       8080-tcp                 None
 ```
 
 ## Task 3: Deploy the green version
@@ -226,12 +226,12 @@ metadata:
   labels:
     app: blue
   name: bluegreen
-  namespace: lab-07-<USERNAME>
+  namespace: lab-07-<USER_NAME>
   resourceVersion: "417063"
-  selfLink: /apis/route.openshift.io/v1/namespaces/lab-07-<USERNAME>/routes/bluegreen
+  selfLink: /apis/route.openshift.io/v1/namespaces/lab-07-<USER_NAME>/routes/bluegreen
   uid: 6c8b5ec3-4ad7-11e9-b86c-0a5a33ba2bc0
 spec:
-  host: bluegreen-lab-07-<USERNAME>.apps.openshift-workshop.gluo.io
+  host: bluegreen-lab-07-<USER_NAME>.apps.openshift-workshop.gluo.io
   port:
     targetPort: 8080-tcp
   to:
@@ -245,7 +245,7 @@ status:
     - lastTransitionTime: 2019-03-20T06:14:31Z
       status: "True"
       type: Admitted
-    host: bluegreen-lab-07-<USERNAME>.apps.openshift-workshop.gluo.io
+    host: bluegreen-lab-07-<USER_NAME>.apps.openshift-workshop.gluo.io
     routerName: router
     wildcardPolicy: None
 
@@ -262,7 +262,7 @@ oc get route
 ---
 
 NAME        HOST/PORT                                                 PATH      SERVICES   PORT       TERMINATION   WILDCARD
-bluegreen   bluegreen-lab-07-<USERNAME>.apps.openshift-workshop.gluo.io         green      8080-tcp                 None
+bluegreen   bluegreen-lab-07-<USER_NAME>.apps.openshift-workshop.gluo.io         green      8080-tcp                 None
 ```
 
 Copy the `HOST/PORT` section of the output in your browser and check out the green
@@ -319,7 +319,7 @@ You can delete your project in the web console or via the CLI with the following
 command.
 
 ```
-oc delete project lab-07-${USERNAME}
+oc delete project lab-07-${USER_NAME}
 
 ---
 

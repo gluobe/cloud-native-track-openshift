@@ -6,16 +6,16 @@ Export the username environment variable. This to be sure that you are going to
 create the correct objects.
 
 ```
-export USERNAME=<username>
+export USER_NAME=<username>
 ```
 
 For this lab we are going to create fresh project. Use the following command.
 
 ```
-oc new-project lab-10-${USERNAME}
+oc new-project lab-10-${USER_NAME}
 ```
 
-Or, of course, create the `lab-10-${USERNAME}` project through the UI.
+Or, of course, create the `lab-10-${USER_NAME}` project through the UI.
 
 ## Task 2 : Create an application with configmap
 
@@ -93,10 +93,10 @@ oc get route
 ---
 
 NAME       HOST/PORT                                                PATH      SERVICES   PORT       TERMINATION   WILDCARD
-node-app   node-app-lab-10-<USERNAME>.apps.openshift-workshop.gluo.io         node-app   8080-tcp                 None
+node-app   node-app-lab-10-<USER_NAME>.apps.openshift-workshop.gluo.io         node-app   8080-tcp                 None
 ```
 
-Open your browser and go to: http://node-app-lab-10-<USERNAME>.apps.openshift-workshop.gluo.io
+Open your browser and go to: http://node-app-lab-10-<USER_NAME>.apps.openshift-workshop.gluo.io
 
 ## Task 3 : Edit the configmap
 
@@ -134,5 +134,5 @@ You can delete your project in the web console or via the CLI with the following
 command.
 
 ```
-oc delete project lab-10-${USERNAME}
+oc delete project lab-10-${USER_NAME}
 ```

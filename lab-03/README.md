@@ -20,7 +20,7 @@ Click on "View All" on the right. You will see the list of projects now.
 Also note the `Create Project` button which allows you to create a new
 project from Web Console.
 
-Create a project `lab-03-<USERNAME>`.
+Create a project `lab-03-<USER_NAME>`.
 
 Now click on the CLI Project to view the details. OpenShift takes you by
 default to the `Overview` page and shows you a graphic representation of

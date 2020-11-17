@@ -10,16 +10,16 @@ Export the username environment variable. This to be sure that you are going to
 create the correct objects.
 
 ```
-export USERNAME=<username>
+export USER_NAME=<username>
 ```
 
 For this lab we are going to create fresh project. Use the following command.
 
 ```
-oc new-project lab-08-${USERNAME}
+oc new-project lab-08-${USER_NAME}
 ```
 
-Or, of course, create the `lab-08-${USERNAME}` project through the UI.
+Or, of course, create the `lab-08-${USER_NAME}` project through the UI.
 
 ## Task 2: Create a new application
 
@@ -27,11 +27,11 @@ We will use a forked repository from the application used in the previous lab.
 Browse to GitHub and fork the following repository 
 https://github.com/RedHatWorkshops/bluegreen.
 
-> NOTE: make sure you replace `<GITHUB_USERNAME>` below with your actual GitHub 
+> NOTE: make sure you replace `<GITHUB_USER_NAME>` below with your actual GitHub 
 > username!
 
 ```
-oc new-app --image-stream=php --code=https://github.com/<GITHUB_USERNAME>/bluegreen.git --name=scm-web-hooks
+oc new-app --image-stream=php --code=https://github.com/<GITHUB_USER_NAME>/bluegreen.git --name=scm-web-hooks
 
 ---
 
@@ -173,11 +173,11 @@ oc get route
 ---
 
 NAME            HOST/PORT                                                     PATH      SERVICES        PORT       TERMINATION   WILDCARD
-scm-web-hooks   scm-web-hooks-lab-08-<USERNAME>.apps.openshift-workshop.gluo.io             scm-web-hooks   8080-tcp                 None
+scm-web-hooks   scm-web-hooks-lab-08-<USER_NAME>.apps.openshift-workshop.gluo.io             scm-web-hooks   8080-tcp                 None
 ```
 
 Paste the `HOST/PORT` section in your browser. This will get you to your 
-deployment: http://scm-web-hooks-lab-08-<USERNAME>.apps.openshift-workshop.gluo.io
+deployment: http://scm-web-hooks-lab-08-<USER_NAME>.apps.openshift-workshop.gluo.io
 
 ## Task 4: Configure the github webhook
 
@@ -186,7 +186,7 @@ configure a webhook that triggers a rebuild and redeploy of our application when
 our code on GitHub changes.
 
 * Navigate to the OpenShift Web console and login.
-* Select your `lab-08-<USERNAME>` project, and click `Builds` and then `Builds`.
+* Select your `lab-08-<USER_NAME>` project, and click `Builds` and then `Builds`.
 * Click onto the build name from the list. You should have just one in this 
 case.
 * Click `Configuration` tab to get list of `Triggers` for the GitHub link.

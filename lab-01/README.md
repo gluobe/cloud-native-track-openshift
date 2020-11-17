@@ -9,13 +9,13 @@ We will first exporting your username as a variable, that way it will be easy to
 just copy/paste the commands below.
 
 ```
-export USERNAME=<REPLACE_WITH_YOUR_USERNAME>
+export USER_NAME=<REPLACE_WITH_YOUR_USER_NAME>
 ```
 
 Make sure that you have exported your username correctly:
 
 ```
-echo ${USERNAME}
+echo ${USER_NAME}
 
 ---
 
@@ -29,7 +29,7 @@ The command below creates a new project and is setting a description and display
 name for the project.
 
 ```
-oc new-project lab-01-${USERNAME} --description="lab-01 - ${USERNAME}" --display-name="lab-01 - ${USERNAME}"
+oc new-project lab-01-${USER_NAME} --description="lab-01 - ${USER_NAME}" --display-name="lab-01 - ${USER_NAME}"
 
 ---
 
@@ -59,7 +59,7 @@ It says that the project is currently not running anything.
 ```
 oc status
 
-In project lab-01 - <USERNAME> (lab-01-<USERNAME>) on server https://openshift-workshop.gluo.io:8443
+In project lab-01 - <USER_NAME> (lab-01-<USER_NAME>) on server https://openshift-workshop.gluo.io:8443
 
 You have no services, deployment configs, or build configs.
 Run 'oc new-app' to create an application.
@@ -173,13 +173,13 @@ oc get routes
 ---
 
 NAME      HOST/PORT                                               PATH      SERVICES   PORT       TERMINATION   WILDCARD
-welcome   welcome-lab-01-<USERNAME>.apps.openshift-workshop.gluo.io             welcome    8080-tcp                 None
+welcome   welcome-lab-01-<USER_NAME>.apps.openshift-workshop.gluo.io             welcome    8080-tcp                 None
 ```
 
 ## Task 4: Test your app
 
 From the `oc get routes` copy the host and surf to it from your browser:
-http://welcome-lab-01-<USERNAME>.apps.openshift-workshop.gluo.io
+http://welcome-lab-01-<USER_NAME>.apps.openshift-workshop.gluo.io
 
 Voila!! you created your first application using an existing docker image on
 OpenShift.
@@ -245,7 +245,7 @@ external docker image and navigate around. Get ready for more fun stuff!
 Delete the project with the following command.
 
 ```
-oc delete project lab-01-${USERNAME}
+oc delete project lab-01-${USER_NAME}
 
 ---
 

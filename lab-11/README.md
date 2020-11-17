@@ -6,16 +6,16 @@ Export the username environment variable. This to be sure that you are going to
 create the correct objects.
 
 ```
-export USERNAME=<username>
+export USER_NAME=<username>
 ```
 
 For this lab we are going to create fresh project. Use the following command.
 
 ```
-oc new-project lab-11-${USERNAME}
+oc new-project lab-11-${USER_NAME}
 ```
 
-Or, of course, create the `lab-11-${USERNAME}` project through the UI.
+Or, of course, create the `lab-11-${USER_NAME}` project through the UI.
 
 ## Task 2 : Create and start an application with 3 replicas
 
@@ -179,5 +179,5 @@ You can delete your project in the web console or via the CLI with the following
 command.
 
 ```
-oc delete project lab-11-${USERNAME}
+oc delete project lab-11-${USER_NAME}
 ```

@@ -10,13 +10,13 @@ Export the username environment variable. This to be sure that you are going to
 create the correct objects.
 
 ```
-export USERNAME=<username>
+export USER_NAME=<username>
 ```
 
 For this lab we are going to create fresh project. Use the following command.
 
 ```
-oc new-project lab-02-${USERNAME}
+oc new-project lab-02-${USER_NAME}
 ```
 
 ## Task 2: Creating an app using a Dockerfile
@@ -341,7 +341,7 @@ oc get routes
 ---
 
 NAME      HOST/PORT                                            PATH      SERVICES   PORT       TERMINATION   WILDCARD
-time      time-lab-02-${USERNAME}.apps.openshift-workshop.gluo.io             time       8080-tcp                 None
+time      time-lab-02-${USER_NAME}.apps.openshift-workshop.gluo.io             time       8080-tcp                 None
 ```
 
 ## Task 6: Running the application
@@ -351,7 +351,7 @@ You can use either curl or your browser. The application displays a success
 message.
 
 ```
-curl time-lab-02-<USERNAME>.apps.openshift-workshop.gluo.io
+curl time-lab-02-<USER_NAME>.apps.openshift-workshop.gluo.io
 
 Congratulations you just deployed your app by using a Docker build strategy!
 ```
@@ -364,7 +364,7 @@ deploy an application using OpenShift’s `Docker Build strategy`.
 Delete the project with the following command.
 
 ```
-oc delete project lab-02-${USERNAME}
+oc delete project lab-02-${USER_NAME}
 
 ---
 

@@ -40,7 +40,7 @@ that is then used for subsequent commands.
 oc login https://openshift-workshop.gluo.io:8443
 
 Authentication required for https://openshift-workshop.gluo.io:8443 (openshift)
-Username: <USERNAME>
+Username: <USER_NAME>
 Password:
 Login successful.
 

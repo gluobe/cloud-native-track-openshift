@@ -50,5 +50,5 @@ You can delete your project in the web console or via the CLI with the following
 command.
 
 ```
-oc delete project lab-08-${USERNAME}
+oc delete project lab-08-${USER_NAME}
 ```

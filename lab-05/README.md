@@ -6,16 +6,16 @@ Export the username environment variable. This to be sure that you are going to
 create the correct objects.
 
 ```
-export USERNAME=<username>
+export USER_NAME=<username>
 ```
 
 For this lab we are going to create fresh project. Use the following command.
 
 ```
-oc new-project lab-05-${USERNAME}
+oc new-project lab-05-${USER_NAME}
 ```
 
-Or, of course, create the `lab-05-${USERNAME}` project through the UI.
+Or, of course, create the `lab-05-${USER_NAME}` project through the UI.
 
 ## Task 2: Create application
 
@@ -84,5 +84,5 @@ minimum pods of the `jenkins` instance.
 Delete your project with the following command.
 
 ```
-oc delete project lab-05-${USERNAME}
+oc delete project lab-05-${USER_NAME}
 ```
